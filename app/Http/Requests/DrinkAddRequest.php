@@ -25,8 +25,8 @@ class DrinkAddRequest extends FormRequest
 
             "drink" => "required|min:3|max:20",
             "amount" => "required|numeric",
-            "type" => "required",
-            "package" => "required"
+            "type_id" => "required",
+            "package_id" => "required"
         ];
     }
 }

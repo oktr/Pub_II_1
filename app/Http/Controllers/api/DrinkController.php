@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Drink;
 use App\Http\Resources\Drink as DrinkResource;
+use App\Http\Requests\DrinkAddRequest;
 
 class DrinkController extends ResponseController {
 
@@ -23,7 +24,7 @@ class DrinkController extends ResponseController {
         return $this->sendResponse( new DrinkResource( $drink ), "Betöltve" );
     }
 
-    public function newDrink( Request $request ) {
+    public function newDrink( DrinkAddRequest $request ) {
 
         $request->validated();
         $drink = new Drink();
